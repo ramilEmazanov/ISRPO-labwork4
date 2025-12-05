@@ -43,3 +43,13 @@ class SquareTestCase(unittest.TestCase):
         res = perimeter(2.5)
         self.assertEqual(res, 10.0)
 
+    def test_area_negative(self):
+        """Тест площади квадрата с отрицательной стороной"""
+        with self.assertRaises(ValueError):
+            area(-5)
+
+    def test_perimeter_negative(self):
+        """Тест периметра квадрата с отрицательной стороной"""
+        with self.assertRaises(ValueError):
+            perimeter(-5)
+

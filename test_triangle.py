@@ -48,3 +48,38 @@ class TriangleTestCase(unittest.TestCase):
         res = perimeter(5, 5, 8)
         self.assertEqual(res, 18)
 
+    def test_area_negative_base(self):
+        """Тест площади треугольника с отрицательным основанием"""
+        with self.assertRaises(ValueError):
+            area(-5, 10)
+
+    def test_area_negative_height(self):
+        """Тест площади треугольника с отрицательной высотой"""
+        with self.assertRaises(ValueError):
+            area(5, -10)
+
+    def test_area_negative_both(self):
+        """Тест площади треугольника с отрицательными основанием и высотой"""
+        with self.assertRaises(ValueError):
+            area(-5, -10)
+
+    def test_perimeter_negative_first_side(self):
+        """Тест периметра треугольника с отрицательной первой стороной"""
+        with self.assertRaises(ValueError):
+            perimeter(-3, 4, 5)
+
+    def test_perimeter_negative_second_side(self):
+        """Тест периметра треугольника с отрицательной второй стороной"""
+        with self.assertRaises(ValueError):
+            perimeter(3, -4, 5)
+
+    def test_perimeter_negative_third_side(self):
+        """Тест периметра треугольника с отрицательной третьей стороной"""
+        with self.assertRaises(ValueError):
+            perimeter(3, 4, -5)
+
+    def test_perimeter_negative_all_sides(self):
+        """Тест периметра треугольника с отрицательными всеми сторонами"""
+        with self.assertRaises(ValueError):
+            perimeter(-3, -4, -5)
+

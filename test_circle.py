@@ -44,3 +44,13 @@ class CircleTestCase(unittest.TestCase):
         res = perimeter(2.5)
         self.assertAlmostEqual(res, 2 * math.pi * 2.5, places=5)
 
+    def test_area_negative(self):
+        """Тест площади круга с отрицательным радиусом"""
+        with self.assertRaises(ValueError):
+            area(-5)
+
+    def test_perimeter_negative(self):
+        """Тест периметра круга с отрицательным радиусом"""
+        with self.assertRaises(ValueError):
+            perimeter(-5)
+

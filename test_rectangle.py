@@ -53,3 +53,33 @@ class RectangleTestCase(unittest.TestCase):
         res = perimeter(2.5, 4.0)
         self.assertEqual(res, 13.0)
 
+    def test_area_negative_width(self):
+        """Тест площади прямоугольника с отрицательной шириной"""
+        with self.assertRaises(ValueError):
+            area(-5, 10)
+
+    def test_area_negative_height(self):
+        """Тест площади прямоугольника с отрицательной высотой"""
+        with self.assertRaises(ValueError):
+            area(5, -10)
+
+    def test_area_negative_both(self):
+        """Тест площади прямоугольника с отрицательными обеими сторонами"""
+        with self.assertRaises(ValueError):
+            area(-5, -10)
+
+    def test_perimeter_negative_width(self):
+        """Тест периметра прямоугольника с отрицательной шириной"""
+        with self.assertRaises(ValueError):
+            perimeter(-5, 10)
+
+    def test_perimeter_negative_height(self):
+        """Тест периметра прямоугольника с отрицательной высотой"""
+        with self.assertRaises(ValueError):
+            perimeter(5, -10)
+
+    def test_perimeter_negative_both(self):
+        """Тест периметра прямоугольника с отрицательными обеими сторонами"""
+        with self.assertRaises(ValueError):
+            perimeter(-5, -10)
+
