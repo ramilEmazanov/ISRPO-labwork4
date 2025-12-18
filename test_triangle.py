@@ -7,11 +7,7 @@ class TriangleTestCase(unittest.TestCase):
         """Тест площади треугольника с нормальными значениями"""
         res = area(5, 10)
         self.assertEqual(res, 25)
-    def test_area_normal_2(self):
-        """Тест площади треугольника с нормальными значениями"""
-        res = area(10, 20)
-        self.assertEqual(res, 200)
-
+        
     def test_area_zero_base(self):
         """Тест площади треугольника с нулевым основанием"""
         res = area(0, 10)
